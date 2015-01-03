@@ -1,13 +1,13 @@
-<h1>Todoo items</h1>
+<h1>Reading List</h1>
 
 
 <h2>TODOO:</h2>
 <% @todos.each do |t|%>
 <p>
-	
+
 	<strong><%= t.name%></strong>
 	<small><%= link_to "Mark as Done", todoo_path(t), :method => :put %></small>
-	
+
 </p>
 
 <%end%>
