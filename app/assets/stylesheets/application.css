@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   font-family: Helvetica, Arial, sans-serif;
+   background-position: center;
+   overflow: hidden;
+   margin: 0;
+   padding: 0;
+ }
+
+.login {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2em;
+}
+
+.login a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.login a:hover {
+  font-weight: bold;
+}
