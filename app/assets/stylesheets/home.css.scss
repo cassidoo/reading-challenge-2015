@@ -39,3 +39,11 @@ p {
   font-size: 2em;
   margin: .5em 0em 1em;
 }
+
+.reading {
+  background-color: $light;
+}
+
+.reading h1, .reading h2, .reading p {
+  color: $dark;
+}

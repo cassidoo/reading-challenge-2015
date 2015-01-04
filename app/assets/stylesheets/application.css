@@ -36,3 +36,32 @@
 .login a:hover {
   font-weight: bold;
 }
+
+.revise {
+  position: fixed;
+  top: 30%;
+  width: 100%;
+  background-color: rgba(57, 57, 57, .6);
+  margin: 15px 0px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.revise a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.revise a:hover {
+  font-weight: bold;
+}
+
+.revise .revise {
+  position: relative;
+  top: 0;
+  background-color: rgba(57, 57, 57, 0);
+}
+
+.reading {
+  background-color: #ffffff;
+}
