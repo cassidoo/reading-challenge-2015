@@ -1,3 +1,5 @@
+require 'books'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -5,4 +7,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :todoo
+
+  after_create :init
+
+  def init
+    BOOKS.each do |item|
+      @t = Todoo.new(name: item, done: false)
+      #Make this work.
+      #@t.user = self
+      #@t.save()
+    end
+  end
 end
