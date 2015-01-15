@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   def init
     BOOKS.each do |item|
-      @t = Todoo.new(name: item, done: false)
+      @t = Todoo.new(name: item, done: false, user_id: current_user)
       #Make this work.
       #@t.user = self
       #@t.save()

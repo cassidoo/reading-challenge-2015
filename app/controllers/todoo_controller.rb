@@ -1,4 +1,19 @@
+require 'books'
+
 class TodooController < ApplicationController
+
+  before_filter :set_current_user
+
+  after_create :init
+
+  def init
+    BOOKS.each do |item|
+      @t = Todoo.new(name: item, done: false, user_id: current_user)
+      #Make this work.
+      #@t.user = self
+      #@t.save()
+    end
+  end
 
   def index
     @todos = Todoo.where(user_id: current_user.id, done: false)
@@ -10,6 +25,8 @@ class TodooController < ApplicationController
   end
 
   def create
+    puts "-----------------------#{todo_params}-----------------------"
+    puts "--------------------#{@todos}--------------------"
     @todo = Todoo.new(todo_params)
     @todo.user = current_user
     if @todo.save
