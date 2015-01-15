@@ -14,12 +14,8 @@
  *= require_self
  */
 
- body {
-   font-family: Helvetica, Arial, sans-serif;
-   background-position: center;
-   overflow: hidden;
-   margin: 0;
-   padding: 0;
+body {
+
  }
 
 .login {
@@ -28,36 +24,6 @@
   font-size: 2em;
 }
 
-.login a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.login a:hover {
-  font-weight: bold;
-}
-
 .revise {
-  position: fixed;
-  top: 30%;
-  width: 100%;
-  background-color: rgba(57, 57, 57, .6);
-  margin: 15px 0px;
-  text-align: center;
-  color: #ffffff;
-}
 
-.revise a {
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.revise a:hover {
-  font-weight: bold;
-}
-
-.revise .revise {
-  position: relative;
-  top: 0;
-  background-color: rgba(57, 57, 57, 0);
 }
