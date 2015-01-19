@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Reading Challenge 2015</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <title>Reading Challenge 2015</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-
-    <% if user_signed_in? %>
-        You're signed in as <%= current_user.email %>, not you?
-  	    <%= link_to "Sign out.", destroy_user_session_path, :method => :delete%>
-    <%else%>
+    <nav class="navbar navbar-default">
+        <% if user_signed_in? %>
+        <p class="navbar-text navbar-right">
+            You're signed in as <%= current_user.email %>, not you?
+            <%= link_to "Sign out.", destroy_user_session_path, :method => :delete%>
+        </p>
+        <%else%>
         <div class="login">
-  	        <%= link_to "Sign up!", new_user_registration_path%> or <%=link_to "Sign in", new_user_session_path%>
+            <%= link_to "Sign up!", new_user_registration_path%> or <%=link_to "Sign in", new_user_session_path%>
         </div>
-    <%end%>
-        <% flash.each do |name,message|%>
-        <%= content_tag :div, message, :id => "flash_#{name}" %>
+
+        <%end%>
+    </nav>
+
+    <% flash.each do |name,message|%>
+    <%= content_tag :div, message, :id => "flash_#{name}" %>
     <%end%>
 
-     <%= yield %>
+    <%= yield %>
 
 </body>
 </html>

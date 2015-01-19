@@ -1,30 +1,30 @@
 <div class="reading">
-<h1>Reading List</h1>
+	<h1>Reading List</h1>
 
-<h2>Books to read</h2>
-<% @todos.each do |t|%>
-<p>
+	<h2>Books to read</h2>
+	<% @todos.each do |t|%>
+	<p>
 
-	<strong><%= t.name%></strong>
-	<small><%= link_to "Mark as Done", todoo_path(t), :method => :put %></small>
+		<strong><%= t.name%></strong>
+		<small><%= link_to "Mark as Done", todoo_path(t), :method => :put %></small>
 
-</p>
+	</p>
 
-<%end%>
+	<%end%>
 
-<h2>Finished reading</h2>
+	<h2>Finished reading</h2>
 
-<% if @todone.empty? %>
+	<% if @todone.empty? %>
 	<p> You've accomplished nothing. Get reading! </p>
-<%end%>
+	<%end%>
 
-<% @todone.each do |t|%>
-<p>
-	<%= t.name%>
-	<small><%= link_to "Unmark as Done", todoo_path(t), :confirm => "is it ok to remove this from the list?", :method => :delete %></small>
-</p>
+	<% @todone.each do |t|%>
+	<p>
+		<%= t.name%>
+		<small><%= link_to "Unmark as Done", todoo_path(t), :confirm => "is it ok to remove this from the list?", :method => :delete %></small>
+	</p>
 
-<%end%>
+	<%end%>
 
 </div>
 
