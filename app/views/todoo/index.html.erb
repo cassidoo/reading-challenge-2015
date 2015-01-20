@@ -1,6 +1,6 @@
 <div class="reading">
 	<div class="page-header text-center">
-		<h1>Reading List</h1>
+		<h1>Reading Challenge 2015</h1>
 	</div>
 
 	<div class="container">
@@ -31,12 +31,16 @@
 
 				<% if @todone.empty? %>
 				<p> You've accomplished nothing. Get reading! </p>
+
+				<a href="https://twitter.com/intent/tweet?button_hashtag=ReadingChallenge2015&text=I'm%20starting%20the%202015%20Reading%20Challenge!" class="twitter-hashtag-button" data-related="superandomness" data-url="http://readingchallenge2015.herokuapp.com">Tweet #ReadingChallenge2015</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
 				<%end%>
 
 				<% @todone.each do |t|%>
 				<p>
 					<%= t.name%>
-					<small><%= link_to "Unmark as Done", todoo_path(t), :confirm => "is it ok to remove this from the list?", :method => :delete %></small>
+					<small><%= link_to "Unmark as Done", todoo_path(t), :confirm => "Is it ok to remove this from the list?", :method => :delete %></small>
 				</p>
 
 				<%end%>
@@ -44,3 +48,26 @@
 		</div>
 	</div>
 </div>
+<footer>
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+
+			<blockquote>
+				<p>Reading is to the mind what exercise is to the body.</p>
+				<footer>Joseph Addison</footer>
+			</blockquote>
+
+			</div>
+			<div class="col-md-6 text-right">
+			<address>
+				<strong>Built by Cassidy Williams</strong><br>
+				<a href="http://cassidoo.co">About</a> -
+				<a href="http://github.com/cassidoo">GitHub</a> -
+				<a href="http://twitter.com/superandomness">Twitter</a>
+				</address>
+			</div>
+		</div>
+	</div>
+</footer>

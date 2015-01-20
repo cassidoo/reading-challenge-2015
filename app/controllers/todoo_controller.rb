@@ -29,18 +29,18 @@ class TodooController < ApplicationController
     def update
         @todo = Todoo.find(params[:id])
         if @todo.update_attribute(:done, true)
-            redirect_to todoo_index_path, :notice => "Your book was marked as finished!"
+            redirect_to todoo_index_path # When a book is marked as finished
         else
-            redirect_to todoo_index_path, :notice => "Your book was unable to be finished for some reason!"
+            redirect_to todoo_index_path # If for some reason a book isn't able to be marked
         end
     end
 
     def destroy
         @todo = Todoo.find(params[:id])
         if @todo.update_attribute(:done, false)
-            redirect_to todoo_index_path, :notice => "You never finished that book. Liar."
+            redirect_to todoo_index_path # When someone unmarks a book
         else
-            redirect_to todoo_index_path, :notice => "What what!"
+            redirect_to todoo_index_path
         end
         # Were this a standard todo list, we would have the below for destroyed items:
         # @todo.destroy

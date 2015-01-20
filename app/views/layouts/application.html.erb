@@ -10,8 +10,8 @@
 <body>
     <nav class="navbar navbar-default">
         <% if user_signed_in? %>
-        <p class="navbar-text navbar-right">
-            You're signed in as <%= current_user.email %>, not you?
+        <p class="navbar-text">
+            Howdy! You're signed in as <%= current_user.email %>. Not you?
             <%= link_to "Sign out.", destroy_user_session_path, :method => :delete%>
         </p>
         <%else%>
