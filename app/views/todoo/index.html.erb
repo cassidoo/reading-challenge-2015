@@ -1,32 +1,46 @@
 <div class="reading">
-	<h1>Reading List</h1>
+	<div class="page-header text-center">
+		<h1>Reading List</h1>
+	</div>
 
-	<h2>Books to read</h2>
-	<% @todos.each do |t|%>
-	<p>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Books to read</h2>
 
-		<strong><%= t.name%></strong>
-		<small><%= link_to "Mark as Done", todoo_path(t), :method => :put %></small>
+				<% if @todos.empty? %>
 
-	</p>
+				<a href="https://twitter.com/intent/tweet?button_hashtag=ReadingChallenge2015&text=I%20finished%20the%202015%20Reading%20Challenge!" class="twitter-hashtag-button" data-related="superandomness" data-url="http://readingchallenge2015.herokuapp.com">Tweet #ReadingChallenge2015</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+				</script>
 
-	<%end%>
+				<%end%>
 
-	<h2>Finished reading</h2>
+				<% @todos.each do |t|%>
+				<p>
 
-	<% if @todone.empty? %>
-	<p> You've accomplished nothing. Get reading! </p>
-	<%end%>
+					<strong><%= t.name%></strong>
+					<small><%= link_to "Mark as Done", todoo_path(t), :method => :put %></small>
 
-	<% @todone.each do |t|%>
-	<p>
-		<%= t.name%>
-		<small><%= link_to "Unmark as Done", todoo_path(t), :confirm => "is it ok to remove this from the list?", :method => :delete %></small>
-	</p>
+				</p>
 
-	<%end%>
+				<%end%>
+			</div>
+			<div class="col-md-6">
+				<h2>Finished reading</h2>
 
+				<% if @todone.empty? %>
+				<p> You've accomplished nothing. Get reading! </p>
+				<%end%>
+
+				<% @todone.each do |t|%>
+				<p>
+					<%= t.name%>
+					<small><%= link_to "Unmark as Done", todoo_path(t), :confirm => "is it ok to remove this from the list?", :method => :delete %></small>
+				</p>
+
+				<%end%>
+			</div>
+		</div>
+	</div>
 </div>
-
-<a href="https://twitter.com/intent/tweet?button_hashtag=ReadingChallenge2015&text=I%20read%20this%20book%20for" class="twitter-hashtag-button" data-related="superandomness">#ReadingChallenge2015</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
