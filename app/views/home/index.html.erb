@@ -1,4 +1,43 @@
-<div class="jumbotron">
-    <h1>2015 Reading Challenge</h1>
+<div class="bg"></div>
+<div class="jumbotron text-center">
+    <h1>Reading Challenge 2015</h1>
     <p class="lead">Read 50 books this year, and track your progress</p>
 </div>
+
+<div class="container">
+    <div class="row text-center">
+        <h2>This year, make it your goal to <strong>read.</strong></h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            It's no secret that reading is an important addition to any and every person's day.
+            This year, make it a part of yours.
+            Once you join, you'll find a set of book types to read. <br>
+            A book that came out the year you were born.<br>
+            A book written by an author with your same initials.<br>
+            A book written by someone under 30.<br>
+            A book you started but never finished.<br><br>
+            Learn more about yourself and the world around you as you immerse yourself in 50 new stories all year.<br>
+            Follow <a href="https://twitter.com/hashtag/ReadingChallenge2015">#ReadingChallenge2015</a> for inspiration, and have fun!
+
+        </div>
+        <div class="col-md-6">
+            <a class="twitter-timeline" href="https://twitter.com/hashtag/ReadingChallenge2015" data-widget-id="557413244126896128">#ReadingChallenge2015 Tweets</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+    </div>
+</div>
+
+<script>
+
+var jumbo = $('.jumbotron').outerHeight();
+
+function parallax(){
+    var scrolled = $(window).scrollTop();
+    $('.bg').css('height', (jumbo - scrolled) + 'px');
+}
+
+$(window).scroll(function(e){
+    parallax();
+});
+</script>
