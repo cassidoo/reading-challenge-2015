@@ -24,3 +24,7 @@
     background: transparent;
     margin-bottom: 0px;
 }
+
+#flash_notice {
+    display: none;
+}
